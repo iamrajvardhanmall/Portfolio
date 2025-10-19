@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Rajvardhan Mall - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="nav container">
+            <a class="brand" href="#home">Rajvardhan Mall</a>
+            <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-list" id="navList">
+                <li><a class="nav-link active" href="#home">Home</a></li>
+                <li><a class="nav-link" href="#skills">Skills</a></li>
+                <li><a class="nav-link" href="#projects">Projects</a></li>
+                <li><a class="nav-link" href="#experience">Experience</a></li>
+                <li><a class="nav-link" href="#education">Education</a></li>
+                <li><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-inner">
+                    <div>
+                        <h1>Hi, I'm Rajvardhan Mall</h1>
+                        <p class="lead">Computer Science Engineering Student at LPU | Data Science & Web Development Enthusiast</p>
+                        <p class="lead">I build interactive web applications and data-driven solutions using modern technologies.</p>
+                        <p class="hero-cta">
+                            <a class="btn btn-primary" href="#projects">View Projects</a>
+                            <a class="btn btn-ghost" href="#contact">Contact Me</a>
+                        </p>
+                    </div>
+                    <div class="hero-image" aria-hidden="true">
+                        <div class="avatar">RM</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section container">
+            <h2>Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Languages</h3>
+                    <div class="chips">
+                        <span class="chip">HTML</span>
+                        <span class="chip">CSS</span>
+                        <span class="chip">JavaScript</span>
+                        <span class="chip">C++</span>
+                        <span class="chip">Python</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-cubes"></i> Frameworks & Libraries</h3>
+                    <div class="chips">
+                        <span class="chip">Pandas</span>
+                        <span class="chip">NumPy</span>
+                        <span class="chip">Matplotlib</span>
+                        <span class="chip">SQL</span>
+                        <span class="chip">Django</span>
+                        <span class="chip">Scikit-learn</span>
+                        <span class="chip">TensorFlow</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
+                    <div class="chips">
+                        <span class="chip">MS Excel</span>
+                        <span class="chip">Jupyter Notebook</span>
+                        <span class="chip">Power BI</span>
+                        <span class="chip">Git</span>
+                        <span class="chip">Bootstrap</span>
+                        <span class="chip">Yahoo Finance API</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-user-friends"></i> Soft Skills</h3>
+                    <div class="chips">
+                        <span class="chip">Problem-Solving</span>
+                        <span class="chip">Team Player</span>
+                        <span class="chip">Leadership</span>
+                        <span class="chip">Adaptability</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section container">
+            <h2>Projects</h2>
+            <div class="grid">
+                <article class="card">
+                    <div class="card-image" style="background:#e9f5ff; display: flex; align-items: center; justify-content: center;">
+                        <h3 style="color: #2563eb;">Algorithm Visualizer</h3>
+                    </div>
+                    <div class="card-body">
+                        <h3>DS Visualizer</h3>
+                        <p>Interactive web application that visualizes tree and graph algorithms with step-by-step execution traces.</p>
+                        <p><strong>Tech Stack:</strong> Django, JavaScript, SVG, REST APIs</p>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li>Implemented BFS, DFS, and BST operations with animated playback</li>
+                            <li>Created responsive SVG UI with play/pause/step controls</li>
+                            <li>Developed Django REST endpoints for algorithm execution</li>
+                        </ul>
+                        <div class="card-actions">
+                            <a href="#" class="link">Live Demo</a> · 
+                            <a href="#" class="link">Source Code</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="card">
+                    <div class="card-image" style="background:#fff0f0; display: flex; align-items: center; justify-content: center;">
+                        <h3 style="color: #dc2626;">Stock Prediction</h3>
+                    </div>
+                    <div class="card-body">
+                        <h3>Coca-Cola Stock Price Prediction</h3>
+                        <p>Time-series forecasting pipeline using LSTM neural network to predict stock prices with technical indicators.</p>
+                        <p><strong>Tech Stack:</strong> Python, Scikit-learn, TensorFlow, Yahoo Finance API, Plotly</p>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li>Implemented feature engineering (SMA, MACD, RSI)</li>
+                            <li>Achieved LSTM RMSE of 1.56 vs Random Forest 1.69</li>
+                            <li>Built interactive dashboard with trading signals</li>
+                        </ul>
+                        <div class="card-actions">
+                            <a href="#" class="link">Live Demo</a> · 
+                            <a href="#" class="link">Source Code</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="card">
+                    <div class="card-image" style="background:#f3ffe9; display: flex; align-items: center; justify-content: center;">
+                        <h3 style="color: #16a34a;">Loan Calculator</h3>
+                    </div>
+                    <div class="card-body">
+                        <h3>Car Loan Calculator</h3>
+                        <p>Full-stack application for precise loan amortization with credit-score adjustments and affordability checks.</p>
+                        <p><strong>Tech Stack:</strong> Django, Bootstrap, JavaScript, WeasyPrint, Google Gemini API</p>
+                        <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                            <li>Implemented user accounts and saved calculations</li>
+                            <li>Integrated AI car value estimator</li>
+                            <li>Added PDF export for professional reports</li>
+                        </ul>
+                        <div class="card-actions">
+                            <a href="#" class="link">Live Demo</a> · 
+                            <a href="#" class="link">Source Code</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="experience" class="section container">
+            <h2>Work Experience</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Data Science Intern - INTERNSELITE</h3>
+                    <p class="muted">75 days intensive industrial training</p>
+                    <p>Completed comprehensive training in Data Science covering statistical modeling, machine learning, and data visualization techniques.</p>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>Applied statistical models to real-world datasets</li>
+                        <li>Developed machine learning pipelines for predictive analytics</li>
+                        <li>Created data visualizations to communicate insights effectively</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3>DSA Training - Lovely Professional University</h3>
+                    <p class="muted">Rigorous hands-on training program</p>
+                    <p>Completed intensive training in core Data Structures and Algorithms concepts through real-world problem-solving sessions.</p>
+                    <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                        <li>Mastered arrays, trees, graphs, and dynamic programming</li>
+                        <li>Solved complex algorithmic challenges</li>
+                        <li>Developed efficient problem-solving approaches</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section container">
+            <h2>Education & Certifications</h2>
+            
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>Lovely Professional University</h3>
+                    <p class="muted">2023 - Present</p>
+                    <p><strong>Bachelor of Technology</strong></p>
+                    <p>Computer Science and Engineering</p>
+                    <p>CGPA: 7.99</p>
+                </div>
+                
+                <div class="education-card">
+                    <h3>Christuraja School, Kushinagar</h3>
+                    <p class="muted">2020 - 2022</p>
+                    <p><strong>Intermediate (12th)</strong></p>
+                    <p>PCM (Physics, Chemistry, Mathematics)</p>
+                    <p>Percentage: 77%</p>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 3rem;">Certifications</h3>
+            <div class="certificates-list">
+                <div class="certificate">
+                    <h4>Advanced Computer Networks</h4>
+                    <p class="muted">NPTEL</p>
+                </div>
+                <div class="certificate">
+                    <h4>Oops & DSA</h4>
+                    <p class="muted">Neo Colab</p>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 3rem;">Extra Curricular Activities</h3>
+            <div class="chips" style="margin-top: 1rem;">
+                <span class="chip">Academics Committee Member - LPU (Aug 2023  May 2024)</span>
+                <span class="chip">Member - Coding Ninjas LPU</span>
+                <span class="chip">Volunteer - Nari Shakti Jagran Samiti (NGO)</span>
+            </div>
+        </section>
+
+        <section id="contact" class="section container">
+            <h2>Get In Touch</h2>
+            <p class="lead">I'm currently pursuing my B.Tech and available for internships and collaborative projects.</p>
+            <p>Feel free to reach out if you'd like to discuss opportunities or just connect!</p>
+            
+            <div class="socials">
+                <a class="social-link" href="https://linkedin.com/in/rajvardhanmall" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a class="social-link" href="https://github.com/jamrajvardhanmall" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a class="social-link" href="mailto:you@example.com">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+                <a class="social-link" href="RajvardhanMall_Resume.pdf" target="_blank">
+                    <i class="fas fa-file-pdf"></i> Resume
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">© 2025 Rajvardhan Mall — Computer Science Engineering Student</div>
+    </footer>
+
+    <script>
+        // Mobile nav toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navList = document.getElementById('navList');
+        navToggle && navToggle.addEventListener('click', () => {
+            const open = navList.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', open);
+        });
+
+        // Smooth scroll and active link
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                    // Close mobile menu if open
+                    if (navList.classList.contains('open')) {
+                        navList.classList.remove('open');
+                        navToggle.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            });
+        });
+
+        // IntersectionObserver for active nav
+        const sections = document.querySelectorAll('main section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const id = entry.target.id;
+                const link = document.querySelector('.nav-link[href="#' + id + '"]');
+                if (link) link.classList.toggle('active', entry.isIntersecting);
+            });
+        }, { rootMargin: '-40% 0px -40% 0px' });
+        sections.forEach(s => io.observe(s));
+
+        // Header scrolled state and reveal animations
+        const header = document.querySelector('.site-header');
+        const revealItems = document.querySelectorAll('.hero-inner, .card');
+
+        const onScroll = () => {
+            if (window.scrollY > 20) header.classList.add('scrolled'); else header.classList.remove('scrolled');
+        };
+        onScroll();
+        window.addEventListener('scroll', onScroll);
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) { e.target.classList.add('in'); revealObserver.unobserve(e.target); }
+            });
+        }, { threshold: 0.08 });
+
+        revealItems.forEach(i => { i.classList.add('fade-up'); revealObserver.observe(i); });
+    </script>
+</body>
+
+</html>
