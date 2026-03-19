@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiDownload, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
-const roles = ['Full Stack Developer', 'Data Science Enthusiast', 'Machine Learning Developer'];
+const roles = ['Full Stack Developer', 'Data Science Enthusiast'];
 
 export default function Hero() {
   const [displayText, setDisplayText] = useState('');
