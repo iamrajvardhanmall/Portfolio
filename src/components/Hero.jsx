@@ -65,11 +65,7 @@ export default function Hero() {
           </p>
 
           <p className="mt-6 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300 sm:text-base">
-            Computer Science student with hands-on experience in full-stack development and data science.
-            Skilled in building scalable web applications using Django and React, and developing machine
-            learning models and data-driven solutions using Python, Pandas, NumPy, and Scikit-learn.
-            Experienced in creating interactive dashboards, ML applications, and analytical tools with
-            Streamlit, Power BI, and Excel to transform data into actionable insights.
+            Computer Science student specializing in Full-Stack Development and Data Science. I build scalable web applications with Django and React, and transform complex data into actionable insights using Python, Scikit-learn, and interactive Streamlit/Power BI dashboards.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
