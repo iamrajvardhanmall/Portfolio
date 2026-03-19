@@ -86,7 +86,7 @@ export default function Projects() {
                   className="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-cyan-500 hover:text-cyan-600 dark:border-slate-700 dark:text-slate-200 dark:hover:border-cyan-400"
                 >
                   <FiGithub />
-                  GitHub
+                  GitHub 
                 </a>
                 <a
                   href="https://example.com"
