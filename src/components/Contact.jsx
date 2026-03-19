@@ -4,11 +4,45 @@ import { FiMail, FiPhone, FiGithub, FiLinkedin, FiMapPin } from 'react-icons/fi'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [isSending, setIsSending] = useState(false);
+  const [status, setStatus] = useState({ type: 'idle', message: '' });
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    alert('Thanks for your message. I will reach out soon.');
-    setForm({ name: '', email: '', message: '' });
+    setIsSending(true);
+    setStatus({ type: 'idle', message: '' });
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/rajvardhanmall@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          _subject: `Portfolio message from ${form.name}`,
+          _template: 'table',
+          _captcha: 'false',
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Request failed');
+      }
+
+      setStatus({ type: 'success', message: 'Message sent successfully. I will get back to you soon.' });
+      setForm({ name: '', email: '', message: '' });
+    } catch (error) {
+      setStatus({
+        type: 'error',
+        message: 'Unable to send right now. Please use the email link on the right panel.',
+      });
+    } finally {
+      setIsSending(false);
+    }
   }
 
   return (
@@ -58,10 +92,22 @@ export default function Contact() {
           />
           <button
             type="submit"
+            disabled={isSending}
             className="rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
           >
-            Send Message
+            {isSending ? 'Sending...' : 'Send Message'}
           </button>
+          {status.type !== 'idle' && (
+            <p
+              className={`text-sm ${
+                status.type === 'success'
+                  ? 'text-emerald-600 dark:text-emerald-400'
+                  : 'text-rose-600 dark:text-rose-400'
+              }`}
+            >
+              {status.message}
+            </p>
+          )}
         </motion.form>
 
         <motion.div
