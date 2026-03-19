@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const achievements = [
   { label: 'LeetCode Rating', value: '1525' },
   { label: 'CodeChef Rating', value: '1248' },
-  { label: 'Problems Solved on LeetCode', value: '230+' },
+  { label: 'Problems Solved across Platforms', value: '330+' },
 ];
 
 export default function Achievements() {
