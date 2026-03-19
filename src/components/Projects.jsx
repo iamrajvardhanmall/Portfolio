@@ -3,11 +3,25 @@ import { FiArrowUpRight, FiGithub } from 'react-icons/fi';
 
 const projects = [
   {
-    title: 'Music Streaming Integration Platform',
-    image: '/projects/music.svg',
+    title: 'Car Loan Calculator',
+    image: '/projects/Car Loan.png',
     description:
-      'Full-stack web application enabling API-driven client-server communication with authentication and third-party API integration.',
-    tech: ['Django REST Framework', 'React', 'Tailwind CSS'],
+      'Full-stack financial tool with amortization calculations, authentication, AI car value estimator, and downloadable reports.',
+    tech: ['Django', 'JavaScript', 'Bootstrap'],
+  },
+  {
+    title: 'Smart Attendance System',
+    image: '/projects/attendance.svg', // You'll need to create/add this image
+    description:
+      'Django-based attendance system with webcam face recognition (OpenCV LBPH), multi-role dashboards (Admin/Faculty/Student), remedial class scheduling, and real-time notifications.',
+    tech: ['Django', 'OpenCV', 'JavaScript', 'Bootstrap', 'Chart.js'],
+  },
+  {
+    title: 'Opportunity Extraction Module',
+    image: '/projects/opportunity.svg', // You'll need to create/add this image
+    description:
+      'Automated web scraping system using Django and APScheduler to monitor university websites for internships/scholarships, featuring change detection, smart classification, and analytics dashboards.',
+    tech: ['Django', 'Python', 'BeautifulSoup', 'APScheduler', 'Chart.js'],
   },
   {
     title: 'Play Store App Rating Predictor',
@@ -17,26 +31,27 @@ const projects = [
     tech: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'Streamlit'],
   },
   {
-    title: 'Car Loan Calculator',
-    image: '/projects/Car Loan.png',
-    description:
-      'Full-stack financial tool with amortization calculations, authentication, AI car value estimator, and downloadable reports.',
-    tech: ['Django', 'JavaScript', 'Bootstrap'],
-  },
-  {
     title: 'Airline Customer Analytics Dashboard',
-    image: '/projects/airline.svg',
+    image: '/projects/Power BI.png',
     description:
       'Interactive analytics dashboard built on 400K+ records to identify customer churn and loyalty insights.',
     tech: ['Power BI'],
   },
   {
     title: 'Coffee Shop Sales Analysis',
-    image: '/projects/coffee.svg',
+    image: '/projects/Dashboard.png',
     description:
       'Interactive Excel dashboard analyzing 149K transactions to identify top products and peak sales hours.',
     tech: ['Excel'],
   },
+  {
+    title: 'AutoLeet - AI LeetCode Solver',
+    image: '/projects/autoleet.svg', // You'll need to create/add this image
+    description:
+      'AI-powered full-stack app that scrapes, solves, and submits LeetCode problems using Groq Llama 3.3 and Selenium automation, featuring a React frontend and Django backend.',
+    tech: ['Django', 'React', 'Groq AI', 'Selenium', 'JavaScript'],
+  },
+  
 ];
 
 export default function Projects() {
