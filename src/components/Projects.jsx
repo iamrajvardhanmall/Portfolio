@@ -18,7 +18,7 @@ const projects = [
   },
   {
     title: 'Car Loan Calculator',
-    image: '/projects/carloan.svg',
+    image: '/projects/Car Loan.png',
     description:
       'Full-stack financial tool with amortization calculations, authentication, AI car value estimator, and downloadable reports.',
     tech: ['Django', 'JavaScript', 'Bootstrap'],
@@ -88,7 +88,7 @@ export default function Projects() {
                   <FiGithub />
                   GitHub 
                 </a>
-                <a
+                {/* <a
                   href="https://example.com"
                   target="_blank"
                   rel="noreferrer"
@@ -96,7 +96,7 @@ export default function Projects() {
                 >
                   <FiArrowUpRight />
                   Live Demo
-                </a>
+                </a> */}
               </div>
             </div>
           </motion.article>
