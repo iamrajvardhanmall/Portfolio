@@ -6,17 +6,24 @@ import SkillChart from '../vue-components/SkillChart.vue';
 const groupedSkills = {
   Languages: ['Python', 'JavaScript', 'C++', 'SQL', 'HTML', 'CSS'],
   Frameworks: ['Django', 'React.js', 'Tailwind CSS', 'Bootstrap'],
-  Libraries: ['Pandas', 'NumPy', 'Matplotlib', 'Scikit-learn', 'Streamlit'],
-  Tools: ['Git', 'Jupyter Notebook', 'Power BI', 'MS Excel', 'VS Code'],
+  Databases: ['MySQL', 'SQLite', 'PostgreSQL'],
+  Libraries: ['Pandas', 'NumPy', 'Matplotlib', 'Scikit-learn', 'Streamlit', 'Plotly'],
+  Analytics: ['Power BI', 'DAX', 'Star Schema Modeling', 'Data Visualization'],
+  Tools: ['Git', 'GitHub', 'Jupyter Notebook', 'Anaconda', 'AWS', 'MS Excel', 'VS Code'],
 };
 
 const skillLevels = [
   { name: 'Python', value: 88 },
   { name: 'JavaScript', value: 82 },
   { name: 'React.js', value: 80 },
+  { name: 'Tailwind CSS', value: 83 },
   { name: 'Django', value: 84 },
+  { name: 'MySQL', value: 76 },
   { name: 'Scikit-learn', value: 78 },
-  { name: 'Power BI', value: 74 },
+  { name: 'Power BI', value: 80 },
+  { name: 'AWS', value: 70 },
+  { name: 'Git', value: 81 },
+  
 ];
 
 export default function Skills() {

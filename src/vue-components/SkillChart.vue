@@ -2,7 +2,6 @@
   <div class="space-y-5">
     <div>
       <h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">{{ title }}</h3>
-      <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">Animated with Vue inside React</p>
     </div>
 
     <div class="space-y-4">

@@ -27,7 +27,7 @@ const projects = [
   },
   {
     title: 'AutoLeet - AI LeetCode Solver',
-    image: '/projects/LeetCode Auto Solver.png', // You'll need to create/add this image
+    image: '/projects/LeetCode Auto Solver.png', 
     description:
       'AI-powered full-stack app that scrapes, solves, and submits LeetCode problems using Groq Llama 3.3 and Selenium automation, featuring a React frontend and Django backend.',
     tech: ['Django', 'React', 'Groq AI', 'Selenium', 'JavaScript'],
@@ -84,10 +84,10 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.45, delay: idx * 0.08 }}
-            className="glass-card group overflow-hidden"
+            className="glass-card group flex h-full flex-col overflow-hidden"
           >
             <img src={project.image} alt={project.title} className="h-44 w-full object-cover" />
-            <div className="p-5">
+            <div className="flex flex-1 flex-col p-5">
               <h3 className="font-display text-lg font-semibold text-slate-900 dark:text-white">{project.title}</h3>
               <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">{project.description}</p>
               <ul className="mt-4 flex flex-wrap gap-2">
@@ -100,7 +100,7 @@ export default function Projects() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-5 flex gap-3">
+              <div className="mt-auto flex gap-3 pt-5">
                 <a
                   href={project.github}
                   target="_blank"
