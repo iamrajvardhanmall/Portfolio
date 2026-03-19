@@ -14,17 +14,17 @@ export default function About() {
         <h2 className="section-title">About</h2>
         <div className="mt-6 space-y-4 text-sm leading-7 text-slate-600 dark:text-slate-300 sm:text-base">
           <p>
-            I am a Computer Science student passionate about building scalable web applications and solving
-            real-world problems using data. I work across full-stack development and data science,
-            combining backend engineering with machine learning and analytics.
+            I am Rajvardhan Mall, a B.Tech Computer Science student at Lovely Professional University,
+            focused on building practical software solutions that solve real user and business problems.
           </p>
           <p>
-            I have experience developing web applications using Django, React, and Tailwind CSS, and
-            building machine learning models using Python, Pandas, NumPy, and Scikit-learn.
+            Through hands-on projects in web development, machine learning, and analytics, I have built
+            experience in turning ideas into working products with clean code, structured workflows,
+            and clear documentation.
           </p>
           <p>
-            I also enjoy transforming complex datasets into meaningful insights through dashboards and
-            analytics tools like Power BI, Streamlit, and Excel.
+            I am continuously improving my technical depth, problem-solving ability, and communication
+            skills to contribute effectively in collaborative engineering teams.
           </p>
         </div>
 
@@ -41,10 +41,20 @@ export default function About() {
             <p className="mt-2 text-sm font-semibold text-cyan-700 dark:text-cyan-300">CGPA: 7.99</p>
           </div>
           <div className="rounded-2xl border border-slate-200 bg-white/70 p-5 dark:border-slate-800 dark:bg-slate-900/70">
-            <h3 className="font-display text-lg font-semibold text-slate-900 dark:text-white">Student Journey</h3>
+            <h3 className="font-display text-lg font-semibold text-slate-900 dark:text-white">Learning Next</h3>
             <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
-              Focused on mastering core CS fundamentals, building production-style projects, and improving problem-solving through consistent coding practice.
+              Technologies I am currently learning to strengthen modern engineering and deployment skills.
             </p>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {['Cloud Computing', 'AWS'].map((tech) => (
+                <li
+                  key={tech}
+                  className="rounded-full border border-cyan-300/60 bg-cyan-100/70 px-2.5 py-1 text-xs font-semibold text-cyan-700 dark:border-cyan-500/40 dark:bg-cyan-500/10 dark:text-cyan-300"
+                >
+                  {tech}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </motion.div>
