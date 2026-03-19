@@ -1,34 +1,45 @@
 import { motion } from 'framer-motion';
-import { FiArrowUpRight, FiGithub } from 'react-icons/fi';
+import { FiGithub } from 'react-icons/fi';
 
 const projects = [
   {
     title: 'Car Loan Calculator',
     image: '/projects/Car Loan.png',
     description:
-      'Full-stack financial tool with amortization calculations, authentication, AI car value estimator, and downloadable reports.',
+      'A secure full-stack financial platform with loan amortization tools, AI-powered car valuation, user authentication, and downloadable reports, built for scalability and performance.',
     tech: ['Django', 'JavaScript', 'Bootstrap'],
+    github: 'https://github.com/iamrajvardhanmall/Car-loan-calculator',
   },
-  {
-    title: 'Smart Attendance System',
-    image: '/projects/attendance.svg', // You'll need to create/add this image
-    description:
-      'Django-based attendance system with webcam face recognition (OpenCV LBPH), multi-role dashboards (Admin/Faculty/Student), remedial class scheduling, and real-time notifications.',
-    tech: ['Django', 'OpenCV', 'JavaScript', 'Bootstrap', 'Chart.js'],
-  },
+  // {
+  //   title: 'Smart Attendance System',
+  //   image: '/projects/attendance.svg', // You'll need to create/add this image
+  //   description:
+  //     'Django-based attendance system with webcam face recognition (OpenCV LBPH), multi-role dashboards (Admin/Faculty/Student), remedial class scheduling, and real-time notifications.',
+  //   tech: ['Django', 'OpenCV', 'JavaScript', 'Bootstrap', 'Chart.js'],
+  // },
   {
     title: 'Opportunity Extraction Module',
-    image: '/projects/opportunity.svg', // You'll need to create/add this image
+    image: '/projects/Ivy League Tracker.png', // You'll need to create/add this image
     description:
       'Automated web scraping system using Django and APScheduler to monitor university websites for internships/scholarships, featuring change detection, smart classification, and analytics dashboards.',
     tech: ['Django', 'Python', 'BeautifulSoup', 'APScheduler', 'Chart.js'],
+    github: 'https://github.com/iamrajvardhanmall/Real-Time-Opportunity-Extraction-Module',
+  },
+  {
+    title: 'AutoLeet - AI LeetCode Solver',
+    image: '/projects/LeetCode Auto Solver.png', // You'll need to create/add this image
+    description:
+      'AI-powered full-stack app that scrapes, solves, and submits LeetCode problems using Groq Llama 3.3 and Selenium automation, featuring a React frontend and Django backend.',
+    tech: ['Django', 'React', 'Groq AI', 'Selenium', 'JavaScript'],
+    github: 'https://github.com/iamrajvardhanmall/AutoLeet-AI-Powered-LeetCode-Problem-Solver',
   },
   {
     title: 'Play Store App Rating Predictor',
-    image: '/projects/playstore.svg',
+    image: '/projects/ML.png',
     description:
       'Machine learning application built on 10k+ Play Store apps using PCA, Random Forest, and K-Means for rating prediction with interactive data exploration.',
     tech: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'Streamlit'],
+    github: 'https://github.com/iamrajvardhanmall/PlaystoreratingPredictor',
   },
   {
     title: 'Airline Customer Analytics Dashboard',
@@ -36,6 +47,7 @@ const projects = [
     description:
       'Interactive analytics dashboard built on 400K+ records to identify customer churn and loyalty insights.',
     tech: ['Power BI'],
+    github: 'https://github.com/iamrajvardhanmall/Power-BI-Dashboard-Project',
   },
   {
     title: 'Coffee Shop Sales Analysis',
@@ -43,14 +55,9 @@ const projects = [
     description:
       'Interactive Excel dashboard analyzing 149K transactions to identify top products and peak sales hours.',
     tech: ['Excel'],
+    github: 'https://github.com/iamrajvardhanmall/MS-Excel',
   },
-  {
-    title: 'AutoLeet - AI LeetCode Solver',
-    image: '/projects/autoleet.svg', // You'll need to create/add this image
-    description:
-      'AI-powered full-stack app that scrapes, solves, and submits LeetCode problems using Groq Llama 3.3 and Selenium automation, featuring a React frontend and Django backend.',
-    tech: ['Django', 'React', 'Groq AI', 'Selenium', 'JavaScript'],
-  },
+  
   
 ];
 
@@ -95,7 +102,7 @@ export default function Projects() {
               </ul>
               <div className="mt-5 flex gap-3">
                 <a
-                  href="https://github.com/iamrajvardhanmall"
+                  href={project.github}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-3 py-2 text-xs font-semibold text-slate-700 transition hover:border-cyan-500 hover:text-cyan-600 dark:border-slate-700 dark:text-slate-200 dark:hover:border-cyan-400"
