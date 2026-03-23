@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import { FiMenu, FiMoon, FiSun, FiX } from 'react-icons/fi';
 
 const navLinks = [
@@ -41,43 +42,75 @@ export default function Navbar() {
 
         <ul className="hidden items-center gap-6 lg:flex">
           {navLinks.map((item) => (
-            <li key={item.id}>
+            <motion.li
+              key={item.id}
+              whileHover={{ y: -2 }}
+              transition={{ duration: 0.2 }}
+            >
               <a
                 href={`#${item.id}`}
-                className="text-sm font-medium text-slate-700 transition hover:text-sky-600 dark:text-slate-300 dark:hover:text-teal-300"
+                className="relative text-sm font-medium text-slate-700 transition hover:text-sky-600 dark:text-slate-300 dark:hover:text-teal-300"
               >
                 {item.label}
+                <motion.span
+                  className="absolute bottom-0 left-0 h-0.5 w-0 bg-gradient-to-r from-sky-600 to-teal-600"
+                  whileHover={{ width: '100%' }}
+                  transition={{ duration: 0.3 }}
+                />
               </a>
-            </li>
+            </motion.li>
           ))}
         </ul>
 
         <div className="flex items-center gap-3">
-          <button
+          <motion.button
             type="button"
             onClick={() => setDarkMode((prev) => !prev)}
+            whileHover={{ scale: 1.1, rotate: 20 }}
+            whileTap={{ scale: 0.95 }}
             className="rounded-lg border border-slate-300 p-2 text-slate-700 transition hover:border-sky-500 hover:text-sky-600 dark:border-slate-700 dark:text-slate-300 dark:hover:border-teal-400 dark:hover:text-teal-300"
             aria-label="Toggle theme"
           >
-            {darkMode ? <FiSun /> : <FiMoon />}
-          </button>
+            <motion.div
+              key={darkMode ? 'dark' : 'light'}
+              initial={{ rotate: 0, opacity: 0 }}
+              animate={{ rotate: 360, opacity: 1 }}
+              exit={{ rotate: 0, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              {darkMode ? <FiSun /> : <FiMoon />}
+            </motion.div>
+          </motion.button>
 
-          <button
+          <motion.button
             type="button"
             onClick={() => setMenuOpen((prev) => !prev)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             className="rounded-lg border border-slate-300 p-2 text-slate-700 lg:hidden dark:border-slate-700 dark:text-slate-300"
             aria-label="Toggle menu"
           >
             {menuOpen ? <FiX /> : <FiMenu />}
-          </button>
+          </motion.button>
         </div>
       </nav>
 
       {menuOpen && (
-        <div className="border-t border-slate-200 bg-white/95 px-4 py-3 dark:border-slate-800 dark:bg-ink-900/95 lg:hidden">
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: 'auto' }}
+          exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.3 }}
+          className="border-t border-slate-200 bg-white/95 px-4 py-3 dark:border-slate-800 dark:bg-ink-900/95 lg:hidden"
+        >
           <ul className="space-y-2">
-            {navLinks.map((item) => (
-              <li key={item.id}>
+            {navLinks.map((item, index) => (
+              <motion.li
+                key={item.id}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.05 }}
+              >
                 <a
                   href={`#${item.id}`}
                   onClick={closeMenu}
@@ -85,10 +118,10 @@ export default function Navbar() {
                 >
                   {item.label}
                 </a>
-              </li>
+              </motion.li>
             ))}
           </ul>
-        </div>
+        </motion.div>
       )}
     </header>
   );

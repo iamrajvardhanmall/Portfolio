@@ -52,6 +52,154 @@ body {
   }
 }
 
+/* Floating animation for background elements */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(-10px) translateX(-10px);
+  }
+  75% {
+    transform: translateY(-25px) translateX(5px);
+  }
+}
+
+/* Pulse glow animation */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.4), 0 0 40px rgba(14, 165, 233, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(14, 165, 233, 0.6), 0 0 60px rgba(14, 165, 233, 0.3);
+  }
+}
+
+/* Shimmer animation for text */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Bounce animation */
+@keyframes bounce-soft {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Rotate animation */
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Scale pulse animation */
+@keyframes scale-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Slide in from left */
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide in from right */
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Text wave animation */
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* GitHub icon glow animation */
+@keyframes github-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(51, 51, 51, 0.3), inset 0 0 10px rgba(51, 51, 51, 0.1);
+    color: #333333;
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(51, 51, 51, 0.6), inset 0 0 15px rgba(51, 51, 51, 0.2);
+    color: #1a1a1a;
+  }
+}
+
+/* LinkedIn icon glow animation */
+@keyframes linkedin-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(10, 102, 194, 0.3), inset 0 0 10px rgba(10, 102, 194, 0.1);
+    color: #0a66c2;
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(10, 102, 194, 0.6), inset 0 0 15px rgba(10, 102, 194, 0.2);
+    color: #0847ab;
+  }
+}
+
+/* Gmail/Email icon glow animation */
+@keyframes gmail-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(234, 67, 53, 0.3), inset 0 0 10px rgba(234, 67, 53, 0.1);
+    color: #ea4335;
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(234, 67, 53, 0.6), inset 0 0 15px rgba(234, 67, 53, 0.2);
+    color: #c1351c;
+  }
+}
+
+/* Image border glow animation */
+@keyframes image-border-glow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(14, 165, 233, 0.2), 0 0 15px rgba(14, 165, 233, 0.1);
+    border-color: rgba(226, 232, 240, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.4), 0 0 35px rgba(14, 165, 233, 0.2);
+    border-color: rgba(14, 165, 233, 0.6);
+  }
+}
+
 .fade-in-up {
   animation: fadeInUp 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
@@ -62,6 +210,76 @@ body {
 
 .fade-in-scale {
   animation: fadeInScale 0.7s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+/* Floating animation classes */
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.float-animation-delayed {
+  animation: float 8s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.float-animation-delayed-more {
+  animation: float 10s ease-in-out infinite;
+  animation-delay: 4s;
+}
+
+/* Glow pulse animation */
+.glow-pulse {
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* Bounce animation */
+.bounce-soft {
+  animation: bounce-soft 2s ease-in-out infinite;
+}
+
+/* Rotate animation */
+.rotate-slow {
+  animation: rotate-slow 20s linear infinite;
+}
+
+/* Scale pulse animation */
+.scale-pulse {
+  animation: scale-pulse 2s ease-in-out infinite;
+}
+
+/* Slide animations */
+.slide-in-left {
+  animation: slide-in-left 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+.slide-in-right {
+  animation: slide-in-right 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+/* Wave animation */
+.wave {
+  animation: wave 1.5s ease-in-out infinite;
+}
+
+/* Social icon hover glow animations */
+.social-github:hover {
+  animation: github-glow 2s ease-in-out infinite;
+  border-color: #333333 !important;
+}
+
+.social-linkedin:hover {
+  animation: linkedin-glow 2s ease-in-out infinite;
+  border-color: #0a66c2 !important;
+}
+
+.social-email:hover {
+  animation: gmail-glow 2s ease-in-out infinite;
+  border-color: #ea4335 !important;
+}
+
+/* Image border glow animation */
+.image-glow-border {
+  animation: image-border-glow 3s ease-in-out infinite;
 }
 
 /* Hide scrollbar while keeping scrolling functionality */
@@ -113,9 +331,94 @@ textarea {
 
 .glass-card:hover {
   @apply shadow-2xl;
+  transform: translateY(-4px);
+}
+
+/* Button hover enhancements */
+button:hover {
+  @apply translate-y-0;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Link hover effects */
+a:hover {
+  text-decoration-color: currentColor;
+}
+
+/* Enhanced button hover glow effect */
+.btn-glow:hover {
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.6);
+}
+
+.btn-glow:focus {
+  box-shadow: 0 0 30px rgba(14, 165, 233, 0.8);
+}
+
+/* Hover lift effect */
+.hover-lift {
+  @apply transition-transform duration-300 ease-out;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+}
+
+/* Hover glow effect */
+.hover-glow:hover {
+  filter: drop-shadow(0 0 15px rgba(14, 165, 233, 0.4));
 }
 
 /* Smooth page entrance */
 main {
   animation: fadeInScale 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Enhance images with hover scale */
+img {
+  @apply transition-transform duration-300 ease-out;
+}
+
+.group img:group-hover {
+  @apply scale-105;
+}
+
+/* Text gradient animation */
+.text-gradient {
+  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 50%, #f59e0b 100%);
+  background-size: 200% 200%;
+  animation: shimmer 3s ease-in-out infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Pulsing badge animation */
+.pulse-badge {
+  animation: scale-pulse 2s ease-in-out infinite;
+}
+
+/* Link underline animation */
+a {
+  position: relative;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease-out;
+}
+
+a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
