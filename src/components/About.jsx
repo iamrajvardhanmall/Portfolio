@@ -53,7 +53,7 @@ export default function About() {
                 >
                   {tech}
                 </li>
-              ))}
+              ))}    
             </ul>
           </div>
         </div>
