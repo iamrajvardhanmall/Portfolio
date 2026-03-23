@@ -48,15 +48,16 @@ export default function Skills() {
   return (
     <section id="skills" className="section-shell py-20">
       <motion.div
-        initial={{ opacity: 0, y: 24 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.5 }}
       >
         <h2 className="section-title">Skills</h2>
-        <p className="mt-3 text-sm text-slate-600 dark:text-slate-300 sm:text-base">
+        <p className="section-subtitle">
           A balanced stack from full-stack web development to data science and analytics.
         </p>
+        <div className="section-accent" />
       </motion.div>
 
       <div className="mt-8 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
@@ -64,18 +65,18 @@ export default function Skills() {
           {Object.entries(groupedSkills).map(([group, items], index) => (
             <motion.article
               key={group}
-              initial={{ opacity: 0, y: 22 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: index * 0.08 }}
-              className="glass-card p-5"
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              className="glass-card p-6"
             >
               <h3 className="font-display text-lg font-semibold text-slate-900 dark:text-white">{group}</h3>
               <ul className="mt-4 flex flex-wrap gap-2">
                 {items.map((skill) => (
                   <li
                     key={skill}
-                    className="rounded-full border border-slate-300 bg-white/70 px-3 py-1 text-xs font-medium text-slate-700 dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-200"
+                    className="rounded-full border border-sky-300/60 bg-sky-100/70 px-3 py-1 text-xs font-medium text-sky-700 dark:border-teal-500/40 dark:bg-teal-500/10 dark:text-teal-300"
                   >
                     {skill}
                   </li>
@@ -86,11 +87,11 @@ export default function Skills() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 22 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="glass-card p-5"
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="glass-card p-6"
         >
           <div ref={vueMountRef} />
         </motion.div>

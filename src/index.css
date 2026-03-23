@@ -64,6 +64,16 @@ body {
   animation: fadeInScale 0.7s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
 
+/* Hide scrollbar while keeping scrolling functionality */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 .section-shell {
   @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
 }

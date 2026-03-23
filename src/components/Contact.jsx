@@ -48,10 +48,10 @@ export default function Contact() {
   return (
     <section id="contact" className="section-shell py-20">
       <motion.div
-        initial={{ opacity: 0, y: 24 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.5 }}
       >
         <h2 className="section-title">Contact</h2>
         <p className="section-subtitle">Reach out for internships, collaborations, or project opportunities.</p>
@@ -61,10 +61,10 @@ export default function Contact() {
       <div className="mt-8 grid gap-6 lg:grid-cols-2">
         <motion.form
           onSubmit={handleSubmit}
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.55 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
           className="glass-card space-y-4 p-6"
         >
           <input
@@ -112,10 +112,10 @@ export default function Contact() {
         </motion.form>
 
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.55 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
           className="glass-card relative overflow-hidden p-6"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 via-transparent to-amber-400/10" />

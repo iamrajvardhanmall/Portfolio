@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { FiArrowLeft, FiArrowRight, FiAward, FiExternalLink } from 'react-icons/fi';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { FiExternalLink, FiAlertCircle, FiX } from 'react-icons/fi';
 
 const certificates = [
   {
@@ -52,25 +52,22 @@ const certificates = [
     credentialUrl: 'https://drive.google.com/drive/folders/1cHspj9bX_QILYjqHt0N2xFdLWysEaw80',
     year: '2026',
   },
-  
 ];
 
 export default function Certificates() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const activeCertificate = certificates[activeIndex];
+  const [imageLoaded, setImageLoaded] = useState({});
+  const [imageError, setImageError] = useState({});
+  const [expandedId, setExpandedId] = useState(null);
 
-  const showPrevious = () => {
-    setActiveIndex((previous) => (previous - 1 + certificates.length) % certificates.length);
+  const handleImageLoad = (index) => {
+    setImageLoaded((prev) => ({ ...prev, [index]: true }));
+    setImageError((prev) => ({ ...prev, [index]: false }));
   };
 
-  const showNext = () => {
-    setActiveIndex((previous) => (previous + 1) % certificates.length);
+  const handleImageError = (index) => {
+    setImageError((prev) => ({ ...prev, [index]: true }));
+    setImageLoaded((prev) => ({ ...prev, [index]: false }));
   };
-
-  useEffect(() => {
-    const intervalId = window.setInterval(showNext, 5000);
-    return () => window.clearInterval(intervalId);
-  }, []);
 
   return (
     <section id="certificates" className="section-shell py-20">
@@ -78,96 +75,140 @@ export default function Certificates() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.55 }}
+        transition={{ duration: 0.5 }}
       >
-        <h2 className="section-title">Certificates</h2>
-        <p className="section-subtitle">Recognitions validating my learning in development, ML, and data science.</p>
+        <h2 className="section-title">Certifications</h2>
+        <p className="section-subtitle">Professional credentials in development, machine learning, and data science.</p>
+        <div className="section-accent" />
       </motion.div>
 
-      <div className="mt-10">
-        <div className="glass-card relative overflow-hidden">
-          <AnimatePresence mode="wait">
-            <motion.article
-              key={activeCertificate.title}
-              initial={{ opacity: 0, x: 28 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -28 }}
-              transition={{ duration: 0.35, ease: 'easeOut' }}
-              className="grid gap-0 md:grid-cols-[1.1fr_1.4fr]"
-            >
+      <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {certificates.map((cert, index) => (
+          <motion.button
+            key={cert.title}
+            type="button"
+            onClick={() => setExpandedId(index)}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.08 }}
+            className="group relative flex min-w-0 flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white/70 transition-all duration-300 hover:border-sky-400 dark:border-slate-800 dark:bg-slate-900/70 dark:hover:border-teal-400"
+          >
+            {/* Certificate Image */}
+            <div className="relative h-48 w-full flex-shrink-0 overflow-hidden bg-slate-100 dark:bg-slate-800">
+              {!imageLoaded[index] && !imageError[index] && (
+                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-700 dark:to-slate-800">
+                  <div className="h-6 w-6 animate-spin rounded-full border-3 border-sky-400/40 border-t-sky-500" />
+                </div>
+              )}
+              {imageError[index] && (
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-100 dark:bg-slate-800">
+                  <FiAlertCircle className="mb-2 text-2xl text-slate-400" />
+                  <p className="text-xs text-slate-500">Image unavailable</p>
+                </div>
+              )}
               <img
-                src={activeCertificate.image}
-                alt={`${activeCertificate.title} cover`}
-                className="h-60 w-full object-cover md:h-full"
+                src={cert.image}
+                alt={cert.title}
+                className="h-full w-full object-cover transition-all duration-300 group-hover:scale-105"
+                onLoad={() => handleImageLoad(index)}
+                onError={() => handleImageError(index)}
+                loading={index === 0 ? 'eager' : 'lazy'}
+                decoding="async"
+                style={{ opacity: imageLoaded[index] && !imageError[index] ? 1 : 0 }}
               />
+            </div>
 
-              <div className="flex flex-col justify-between p-6 sm:p-8">
-                <div>
-                  <span className="inline-flex items-center gap-2 rounded-full border border-emerald-300/70 bg-emerald-100/60 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-emerald-700 dark:border-emerald-500/40 dark:bg-emerald-500/10 dark:text-emerald-300">
-                    <FiAward />
-                    Certified
-                  </span>
-                  <h3 className="mt-4 text-xl font-semibold leading-tight text-slate-900 dark:text-white sm:text-2xl">
-                    {activeCertificate.title}
-                  </h3>
-                  <p className="mt-2 text-sm font-medium text-slate-600 dark:text-slate-300">
-                    {activeCertificate.issuer} . {activeCertificate.year}
-                  </p>
-                </div>
-
-                <div className="mt-6 flex items-center gap-3">
-                  <a
-                    href={activeCertificate.credentialUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
-                  >
-                    <FiExternalLink />
-                    View Certificate
-                  </a>
-                </div>
+            {/* Certificate Info */}
+            <div className="flex flex-1 flex-col justify-between gap-2 p-4">
+              <div>
+                <h3 className="line-clamp-2 text-sm font-semibold leading-snug text-slate-900 dark:text-white">
+                  {cert.title}
+                </h3>
+                <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">{cert.issuer}</p>
               </div>
-            </motion.article>
-          </AnimatePresence>
-        </div>
-
-        <div className="mt-5 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            {certificates.map((item, idx) => (
-              <button
-                key={item.title}
-                type="button"
-                onClick={() => setActiveIndex(idx)}
-                aria-label={`Go to ${item.title}`}
-                className={`h-2.5 rounded-full transition ${
-                  idx === activeIndex
-                    ? 'w-8 bg-cyan-500 dark:bg-cyan-400'
-                    : 'w-2.5 bg-slate-300 hover:bg-slate-400 dark:bg-slate-700 dark:hover:bg-slate-600'
-                }`}
-              />
-            ))}
-          </div>
-
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={showPrevious}
-              aria-label="Previous certificate"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 text-slate-700 transition hover:border-cyan-500 hover:text-cyan-600 dark:border-slate-700 dark:text-slate-200 dark:hover:border-cyan-400 dark:hover:text-cyan-300"
-            >
-              <FiArrowLeft />
-            </button>
-            <button
-              type="button"
-              onClick={showNext}
-              aria-label="Next certificate"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 text-slate-700 transition hover:border-cyan-500 hover:text-cyan-600 dark:border-slate-700 dark:text-slate-200 dark:hover:border-cyan-400 dark:hover:text-cyan-300"
-            >
-              <FiArrowRight />
-            </button>
-          </div>
-        </div>
+              <p className="text-xs font-medium text-sky-700 dark:text-teal-300">{cert.year}</p>
+            </div>
+          </motion.button>
+        ))}
       </div>
+
+      {/* Expanded Modal */}
+      {expandedId !== null && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setExpandedId(null)}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            onClick={(e) => e.stopPropagation()}
+            className="glass-card relative max-h-[90vh] w-full max-w-2xl overflow-auto border-slate-200 bg-white/80 dark:border-slate-700/50 dark:bg-slate-800/80"
+          >
+            <button
+              type="button"
+              onClick={() => setExpandedId(null)}
+              className="absolute top-4 right-4 z-10 rounded-full border border-slate-300 bg-white/70 p-2 text-slate-700 transition hover:border-slate-400 dark:border-slate-700 dark:bg-slate-900/80 dark:text-slate-200 dark:hover:border-slate-600"
+              aria-label="Close"
+            >
+              <FiX className="h-5 w-5" />
+            </button>
+
+            <div className="relative">
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100 dark:bg-slate-800">
+                {!imageLoaded[expandedId] && !imageError[expandedId] && (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="h-8 w-8 animate-spin rounded-full border-4 border-sky-400/40 border-t-sky-500" />
+                  </div>
+                )}
+                {imageError[expandedId] && (
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <FiAlertCircle className="mb-2 text-3xl text-slate-400" />
+                    <p className="text-sm text-slate-500">Image could not be loaded</p>
+                  </div>
+                )}
+                <img
+                  src={certificates[expandedId].image}
+                  alt={certificates[expandedId].title}
+                  className="h-full w-full object-cover"
+                  onLoad={() => handleImageLoad(expandedId)}
+                  onError={() => handleImageError(expandedId)}
+                  loading="eager"
+                  decoding="async"
+                  style={{ opacity: imageLoaded[expandedId] && !imageError[expandedId] ? 1 : 0 }}
+                />
+              </div>
+            </div>
+
+            <div className="space-y-4 p-6 sm:p-8">
+              <div className="space-y-3">
+                <span className="text-xs font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-400">
+                  Certification
+                </span>
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white sm:text-3xl">
+                  {certificates[expandedId].title}
+                </h2>
+                <p className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                  {certificates[expandedId].issuer} • {certificates[expandedId].year}
+                </p>
+              </div>
+              <a
+                href={certificates[expandedId].credentialUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-sky-600 to-teal-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:from-sky-500 hover:to-teal-500"
+              >
+                <FiExternalLink />
+                View Certificate
+              </a>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
     </section>
   );
 }

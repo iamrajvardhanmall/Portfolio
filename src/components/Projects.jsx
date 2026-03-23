@@ -65,10 +65,10 @@ export default function Projects() {
   return (
     <section id="projects" className="section-shell py-20">
       <motion.div
-        initial={{ opacity: 0, y: 22 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.55 }}
+        transition={{ duration: 0.5 }}
       >
         <h2 className="section-title">Projects</h2>
         <p className="section-subtitle">
@@ -81,10 +81,10 @@ export default function Projects() {
         {projects.map((project, idx) => (
           <motion.article
             key={project.title}
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.45, delay: idx * 0.08 }}
+            transition={{ duration: 0.5, delay: idx * 0.08 }}
             className="glass-card group flex h-full flex-col overflow-hidden"
           >
             <img src={project.image} alt={project.title} className="h-44 w-full object-cover" />
