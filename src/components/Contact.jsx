@@ -55,6 +55,7 @@ export default function Contact() {
       >
         <h2 className="section-title">Contact</h2>
         <p className="section-subtitle">Reach out for internships, collaborations, or project opportunities.</p>
+        <div className="section-accent" />
       </motion.div>
 
       <div className="mt-8 grid gap-6 lg:grid-cols-2">
@@ -72,7 +73,7 @@ export default function Contact() {
             required
             value={form.name}
             onChange={(e) => setForm((p) => ({ ...p, name: e.target.value }))}
-            className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none focus:border-cyan-500 dark:border-slate-700 dark:bg-slate-900"
+            className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none focus:border-sky-500 dark:border-slate-700 dark:bg-slate-900"
           />
           <input
             type="email"
@@ -80,7 +81,7 @@ export default function Contact() {
             required
             value={form.email}
             onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))}
-            className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none focus:border-cyan-500 dark:border-slate-700 dark:bg-slate-900"
+            className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none focus:border-sky-500 dark:border-slate-700 dark:bg-slate-900"
           />
           <textarea
             placeholder="Message"
@@ -88,12 +89,12 @@ export default function Contact() {
             rows={5}
             value={form.message}
             onChange={(e) => setForm((p) => ({ ...p, message: e.target.value }))}
-            className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none focus:border-cyan-500 dark:border-slate-700 dark:bg-slate-900"
+            className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none focus:border-sky-500 dark:border-slate-700 dark:bg-slate-900"
           />
           <button
             type="submit"
             disabled={isSending}
-            className="rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
+            className="rounded-xl bg-gradient-to-r from-sky-600 to-teal-600 px-5 py-3 text-sm font-semibold text-white transition hover:from-sky-500 hover:to-teal-500"
           >
             {isSending ? 'Sending...' : 'Send Message'}
           </button>
@@ -117,7 +118,7 @@ export default function Contact() {
           transition={{ duration: 0.55 }}
           className="glass-card relative overflow-hidden p-6"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-emerald-500/10" />
+          <div className="absolute inset-0 bg-gradient-to-br from-sky-500/10 via-transparent to-amber-400/10" />
           <div className="absolute right-5 top-5 rounded-lg border border-slate-300/40 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500 dark:border-slate-700 dark:text-slate-400">
             Location
           </div>

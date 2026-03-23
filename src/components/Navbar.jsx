@@ -33,7 +33,7 @@ export default function Navbar() {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/75 backdrop-blur-lg dark:border-slate-800/70 dark:bg-ink-950/70">
+    <header className="fade-in-down sticky top-0 z-50 border-b border-slate-200/70 bg-white/75 backdrop-blur-lg transition-all duration-300 dark:border-slate-800/70 dark:bg-ink-950/70">
       <nav className="section-shell flex h-16 items-center justify-between">
         <a href="#home" className="font-display text-lg font-bold tracking-wide text-slate-900 dark:text-white">
           Rajvardhan Mall
@@ -44,7 +44,7 @@ export default function Navbar() {
             <li key={item.id}>
               <a
                 href={`#${item.id}`}
-                className="text-sm font-medium text-slate-700 transition hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-300"
+                className="text-sm font-medium text-slate-700 transition hover:text-sky-600 dark:text-slate-300 dark:hover:text-teal-300"
               >
                 {item.label}
               </a>
@@ -56,7 +56,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setDarkMode((prev) => !prev)}
-            className="rounded-lg border border-slate-300 p-2 text-slate-700 transition hover:border-cyan-500 hover:text-cyan-600 dark:border-slate-700 dark:text-slate-300 dark:hover:border-cyan-400 dark:hover:text-cyan-300"
+            className="rounded-lg border border-slate-300 p-2 text-slate-700 transition hover:border-sky-500 hover:text-sky-600 dark:border-slate-700 dark:text-slate-300 dark:hover:border-teal-400 dark:hover:text-teal-300"
             aria-label="Toggle theme"
           >
             {darkMode ? <FiSun /> : <FiMoon />}

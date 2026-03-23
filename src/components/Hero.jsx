@@ -41,8 +41,8 @@ export default function Hero() {
 
   return (
     <section id="home" className="section-shell relative overflow-hidden py-20 sm:py-28">
-      <div className="absolute -left-24 top-8 h-64 w-64 rounded-full bg-cyan-400/20 blur-3xl" />
-      <div className="absolute -right-16 bottom-0 h-72 w-72 rounded-full bg-emerald-400/20 blur-3xl" />
+      <div className="absolute -left-24 top-8 h-64 w-64 rounded-full bg-sky-400/20 blur-3xl" />
+      <div className="absolute -right-16 bottom-0 h-72 w-72 rounded-full bg-teal-400/20 blur-3xl" />
 
       <div className="relative grid items-center gap-10 lg:grid-cols-[1.25fr_0.75fr]">
         <motion.div
@@ -50,7 +50,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65 }}
         >
-          <p className="mb-4 inline-flex rounded-full border border-cyan-300/40 bg-cyan-100/60 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-cyan-700 dark:border-cyan-400/30 dark:bg-cyan-500/10 dark:text-cyan-300">
+          <p className="mb-4 inline-flex rounded-full border border-sky-300/45 bg-sky-100/70 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-sky-700 dark:border-sky-400/30 dark:bg-sky-500/10 dark:text-sky-300">
             3rd Year B.Tech CSE Student
           </p>
           <h1 className="font-display text-4xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
@@ -59,7 +59,7 @@ export default function Hero() {
           <p className="mt-4 text-lg font-semibold text-slate-700 dark:text-slate-200">
             Full Stack Developer & Data Science Enthusiast
           </p>
-          <p className="mt-3 min-h-7 text-sm font-semibold text-cyan-700 dark:text-cyan-300 sm:text-base">
+          <p className="mt-3 min-h-7 text-sm font-semibold text-teal-700 dark:text-teal-300 sm:text-base">
             {displayText}
             <span className="ml-1 animate-pulse">|</span>
           </p>
@@ -71,7 +71,7 @@ export default function Hero() {
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href="#projects"
-              className="rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-700 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200"
+              className="rounded-xl bg-gradient-to-r from-sky-600 to-teal-600 px-5 py-3 text-sm font-semibold text-white transition hover:from-sky-500 hover:to-teal-500"
             >
               View Projects
             </a>
@@ -79,14 +79,14 @@ export default function Hero() {
               href="https://drive.google.com/drive/folders/18zTeYBSkzMBPbXFsWKf6ZnkNQisRoMMS"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-cyan-500 hover:text-cyan-600 dark:border-slate-700 dark:text-slate-200 dark:hover:border-cyan-400 dark:hover:text-cyan-300"
+              className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-sky-500 hover:text-sky-600 dark:border-slate-700 dark:text-slate-200 dark:hover:border-teal-400 dark:hover:text-teal-300"
             >
               <FiDownload />
               Download Resume
             </a>
             <a
               href="#contact"
-              className="rounded-xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-cyan-500 hover:text-cyan-600 dark:border-slate-700 dark:text-slate-200 dark:hover:border-cyan-400 dark:hover:text-cyan-300"
+              className="rounded-xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-sky-500 hover:text-sky-600 dark:border-slate-700 dark:text-slate-200 dark:hover:border-teal-400 dark:hover:text-teal-300"
             >
               Contact Me
             </a>
@@ -97,7 +97,7 @@ export default function Hero() {
               href="https://github.com/iamrajvardhanmall"
               target="_blank"
               rel="noreferrer"
-              className="rounded-lg border border-slate-300 p-3 text-slate-700 transition hover:border-cyan-500 hover:text-cyan-600 dark:border-slate-700 dark:text-slate-300 dark:hover:border-cyan-400 dark:hover:text-cyan-300"
+              className="rounded-lg border border-slate-300 p-3 text-slate-700 transition hover:border-sky-500 hover:text-sky-600 dark:border-slate-700 dark:text-slate-300 dark:hover:border-teal-400 dark:hover:text-teal-300"
               aria-label="GitHub"
             >
               <FiGithub />
@@ -106,14 +106,14 @@ export default function Hero() {
               href="https://linkedin.com/in/rajvardhanmall"
               target="_blank"
               rel="noreferrer"
-              className="rounded-lg border border-slate-300 p-3 text-slate-700 transition hover:border-cyan-500 hover:text-cyan-600 dark:border-slate-700 dark:text-slate-300 dark:hover:border-cyan-400 dark:hover:text-cyan-300"
+              className="rounded-lg border border-slate-300 p-3 text-slate-700 transition hover:border-sky-500 hover:text-sky-600 dark:border-slate-700 dark:text-slate-300 dark:hover:border-teal-400 dark:hover:text-teal-300"
               aria-label="LinkedIn"
             >
               <FiLinkedin />
             </a>
             <a
               href="mailto:rajvardhanmall@gmail.com"
-              className="rounded-lg border border-slate-300 p-3 text-slate-700 transition hover:border-cyan-500 hover:text-cyan-600 dark:border-slate-700 dark:text-slate-300 dark:hover:border-cyan-400 dark:hover:text-cyan-300"
+              className="rounded-lg border border-slate-300 p-3 text-slate-700 transition hover:border-sky-500 hover:text-sky-600 dark:border-slate-700 dark:text-slate-300 dark:hover:border-teal-400 dark:hover:text-teal-300"
               aria-label="Email"
             >
               <FiMail />
