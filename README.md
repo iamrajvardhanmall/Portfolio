@@ -64,7 +64,7 @@ I am a passionate developer focused on building scalable web applications and tr
 
 ## 📫 Get in Touch
 - **Website:** [rajvardhanmall.vercel.app](https://rajvardhanmall.vercel.app/)
-- **Email:** [Your Email Here]
+- **Email:** rajvardhanmall@gmail.com
 - **LinkedIn:** [Rajvardhan Mall](https://www.linkedin.com/in/rajvardhan-mall-958bb8281)
 
 ---
