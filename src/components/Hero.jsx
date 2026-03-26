@@ -80,9 +80,8 @@ export default function Hero() {
               View Projects
             </motion.a>
             <motion.a
-              href="https://drive.google.com/drive/folders/18zTeYBSkzMBPbXFsWKf6ZnkNQisRoMMS"
-              target="_blank"
-              rel="noreferrer"
+              href="/resume/Rajvardhan_Mall_CV.pdf"
+              download="Rajvardhan_Mall_CV.pdf"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-sky-500 hover:text-sky-600 dark:border-slate-700 dark:text-slate-200 dark:hover:border-teal-400 dark:hover:text-teal-300"
@@ -96,7 +95,7 @@ export default function Hero() {
               whileTap={{ scale: 0.95 }}
               className="rounded-xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-sky-500 hover:text-sky-600 dark:border-slate-700 dark:text-slate-200 dark:hover:border-teal-400 dark:hover:text-teal-300"
             >
-              Hire Me
+              Contact Me
             </motion.a>
           </div>
 

@@ -52,6 +52,13 @@ const certificates = [
     credentialUrl: 'https://drive.google.com/drive/folders/1cHspj9bX_QILYjqHt0N2xFdLWysEaw80',
     year: '2026',
   },
+  {
+    title: 'Python Training Program',
+    issuer: 'DataFlair',
+    image: '/certificates/Python.png',
+    credentialUrl: 'https://drive.google.com/drive/folders/1cHspj9bX_QILYjqHt0N2xFdLWysEaw80', 
+    year: '2024',
+  }
 ];
 
 export default function Certificates() {
