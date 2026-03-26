@@ -13,29 +13,34 @@ export default function Contact() {
     setStatus({ type: 'idle', message: '' });
 
     try {
+      // FormSubmit prefers FormData for AJAX submissions
+      const formData = new FormData();
+      formData.append('name', form.name);
+      formData.append('email', form.email);
+      formData.append('message', form.message);
+      formData.append('_subject', `Portfolio message from ${form.name}`);
+      formData.append('_template', 'table');
+      formData.append('_captcha', 'false');
+
       const response = await fetch('https://formsubmit.co/ajax/rajvardhanmall@gmail.com', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
           Accept: 'application/json',
         },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          message: form.message,
-          _subject: `Portfolio message from ${form.name}`,
-          _template: 'table',
-          _captcha: 'false',
-        }),
+        body: formData,
       });
 
+      const data = await response.json();
+      console.log('FormSubmit Response:', { status: response.status, data });
+
       if (!response.ok) {
-        throw new Error('Request failed');
+        throw new Error(`Request failed: ${response.status} - ${data?.error || 'Unknown error'}`);
       }
 
       setStatus({ type: 'success', message: 'Message sent successfully. I will get back to you soon.' });
       setForm({ name: '', email: '', message: '' });
     } catch (error) {
+      console.error('Contact Form Error:', error);
       setStatus({
         type: 'error',
         message: 'Unable to send right now. Please use the email link on the right panel.',
