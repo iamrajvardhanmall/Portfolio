@@ -11,7 +11,7 @@ A professional showcase of my journey as a **Computer Science Student**, bridgin
 I am a passionate developer focused on building scalable web applications and transforming complex datasets into actionable business intelligence. My expertise lies in architecting robust backends with **Django**, crafting interactive frontends with **React**, and uncovering insights through **Machine Learning**.
 
 - 🎓 **Education:** B.Tech in Computer Science & Engineering @ Lovely Professional University
-- 📈 **CGPA:** 7.99 / 10
+- 📈 **CGPA:** 8.02 / 10
 - 🎯 **Focus:** Full-Stack Engineering, Data Analytics, and CPU Scheduling Optimization.
 
 ---
