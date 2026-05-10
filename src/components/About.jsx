@@ -52,8 +52,8 @@ export default function About() {
               <h3 className="font-display text-lg font-semibold text-slate-900 dark:text-white">Education</h3>
             </div>
             <p className="mt-3 text-sm text-slate-700 dark:text-slate-300">B.Tech in Computer Science and Engineering</p>
-            <p className="text-sm text-slate-600 dark:text-slate-400">Lovely Professional University</p>
-            <p className="mt-2 text-sm font-semibold text-sky-700 dark:text-teal-300">CGPA: 7.99</p>
+            <p className="text-sm text-slate-600 dark:text-slate-400">Lovely Professional Unversity</p>
+            <p className="mt-2 text-sm font-semibold text-sky-700 dark:text-teal-300">CGPA: 8.02</p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
